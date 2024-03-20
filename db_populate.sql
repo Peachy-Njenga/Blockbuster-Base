@@ -38,7 +38,9 @@ VALUES
 ('The Dark Knight', 'Christopher Nolan', 'A crime thriller film that follows Batman as he confronts the Joker.', 'Christian Bale', 9),
 ('Forrest Gump', 'Robert Zemeckis', 'The story depicts several decades in the life of Forrest Gump.', 'Tom Hanks', 8),
 ('Titanic', 'James Cameron', 'A fictionalized account of the sinking of the RMS Titanic.', 'Leonardo DiCaprio', 8),
-('The Shawshank Redemption', 'Frank Darabont', 'Two imprisoned men bond over a number of years.', 'Tim Robbins', 9),
+('The Shawshank Redemption', 'Frank Darabont', 'Two imprisoned men bond over a number of years.', 'Tim Robbins', 9), 
+('Pulp Fiction', 'Quentin Tarantino', 'The lives of two mob hitmen, a boxer, a gangster, and his wife intertwine in four tales of violence and redemption.', 'John Travolta', 9),
+('The Godfather: Part II', 'Francis Ford Coppola', 'The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.', 'Al Pacino', 9),
 ('Inception', 'Christopher Nolan', 'A thief who enters the dreams of others to steal secrets from their subconscious.', 'Leonardo DiCaprio', 9);
 
 -- Populate tape table
@@ -61,17 +63,22 @@ VALUES
 (2, 'Card', 30, '2024-03-02', 'Completed'),
 (3, 'Cash', 40, '2024-03-03', 'Completed'),
 (4, 'Card', 60, '2024-03-04', 'Completed'),
+(4, 'Card', 40, '2024-03-04', 'Completed'),
 (5, 'Debit', 25, '2024-03-05', 'Approved'),
+(6, 'Cash', 35, '2024-03-06', 'Completed'),
 (6, 'Cash', 35, '2024-03-06', 'Completed');
 
 -- Populate rental table
 INSERT INTO rental (payment_id, employee_id, customer_id, tape_id, payment_info, date_and_time_of_renting, status_of_rental, due_date_and_time, over_due_charges, amount_to_be_payed)
 VALUES 
-(1, 1, 1, 1, 'Payment Info 1', '2024-03-05 10:00:00', 'Returned in time', '2024-03-12 10:00:00', 0, 10),
-(2, 2, 2, 3, 'Payment Info 2', '2024-03-06 11:00:00', 'Rented', '2024-03-13 11:00:00', 0, 15),
-(3, 3, 3, 4, 'Payment Info 3', '2024-03-07 12:00:00', 'Rented', '2024-03-14 12:00:00', 0, 20),
-(4, 4, 4, 4, 'Payment Info 4', '2024-03-08 13:00:00', 'Returned late', '2024-03-15 13:00:00', 20, 25),
+(1, 1, 1, 1, 'Payment Info 1', '2024-03-05 10:00:00', 'Returned in time', '2024-03-12 10:00:00', 0, 50),
+(2, 2, 2, 3, 'Payment Info 2', '2024-03-06 11:00:00', 'Rented', '2024-03-13 11:00:00', 0, 30),
+(3, 3, 3, 4, 'Payment Info 3', '2024-03-07 12:00:00', 'Rented', '2024-03-14 12:00:00', 0, 40),
+(4, 6, 1, 8, 'Payment Info 6', '2024-03-10 15:00:00', 'Rented', '2024-03-17 15:00:00', 0, 30),
+(7, 1, 2, 7, 'Payment Info 7', '2024-03-11 16:00:00', 'Rented', '2024-03-18 16:00:00', 0, 35),
+(8, 2, 3, 6, 'Payment Info 8', '2024-03-12 17:00:00', 'Returned in time', '2024-03-19 17:00:00', 0, 35),
+(4, 4, 4, 4, 'Payment Info 4', '2024-03-08 13:00:00', 'Returned late', '2024-03-15 13:00:00', 20, 10),
 (5, 5, 5, 5, 'Payment Info 5', '2024-03-09 14:00:00', 'Returned late', '2024-03-16 14:00:00', 10, 30),
-(6, 6, 1, 8, 'Payment Info 6', '2024-03-10 15:00:00', 'Rented', '2024-03-17 15:00:00', 0, 35);
+(6, 6, 1, 8, 'Payment Info 6', '2024-03-10 15:00:00', 'Rented', '2024-03-17 15:00:00', 10, 15);
 
 
